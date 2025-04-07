@@ -1,0 +1,6 @@
+---
+mariadb_package: mariadb-server
+mariadb_service: mariadb
+database_name: test_db
+database_user: test_user
+database_password: test_pass

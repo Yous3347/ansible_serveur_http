@@ -1,0 +1,12 @@
+---
+- name: Installer PHPMyAdmin
+  apt:
+    name: "{{ phpmyadmin_package }}"
+    state: present
+  become: yes
+
+- name: Déployer le fichier de configuration de PHPMyAdmin
+  template:
+    src: config.inc.php.j2
+    dest: "{{ phpmyadmin_config_file }}"
+  become: yes

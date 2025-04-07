@@ -1,0 +1,3 @@
+---
+phpmyadmin_package: phpmyadmin
+phpmyadmin_config_file: /etc/phpmyadmin/config.inc.php

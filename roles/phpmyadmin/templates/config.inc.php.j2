@@ -1,0 +1,10 @@
+<?php
+/* Configuration de base pour PHPMyAdmin */
+$i = 0;
+$i++;
+$cfg['Servers'][$i]['host'] = "localhost";
+$cfg['Servers'][$i]['port'] = "3306";
+$cfg['Servers'][$i]['user'] = "{{ database_user }}";
+$cfg['Servers'][$i]['password'] = "{{ database_password }}";
+$cfg['Servers'][$i]['auth_type'] = 'cookie';
+$cfg['blowfish_secret'] = 'changez_cette_phrase'; // Changez cette phrase pour une valeur sécurisée

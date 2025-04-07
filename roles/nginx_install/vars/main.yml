@@ -1,0 +1,5 @@
+---
+
+# Variables spécifiques pour Nginx
+
+nginx_worker_processes: 1

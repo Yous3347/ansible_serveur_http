@@ -1,0 +1,32 @@
+---
+- name: Installer le serveur MariaDB
+  apt:
+    name: "{{ mariadb_package }}"
+    state: present
+  become: yes
+
+- name: Démarrer et activer le service MariaDB
+  service:
+    name: "{{ mariadb_service }}"
+    state: started
+    enabled: yes
+  become: yes
+
+- name: Créer la base de données {{ database_name }}
+  mysql_db:
+    name: "{{ database_name }}"
+    state: present
+    login_user: root
+    login_password: autovia
+  become: yes
+
+- name: Créer l'utilisateur {{ database_user }} et lui accorder tous les privilèges sur {{ database_name }}
+  mysql_user:
+    name: user1
+    password: password
+    priv: "{{ database_name }}.*:ALL"
+    state: present
+    login_user: root
+    login_password: autovia
+  become: yes
+
