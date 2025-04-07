@@ -1,0 +1,7 @@
+---
+- name: Déployer MariaDB et PHPMyAdmin
+  hosts: all
+  become: yes
+  roles:
+    - database
+    - phpmyadmin
